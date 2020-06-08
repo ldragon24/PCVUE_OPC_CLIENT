@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{55FE97DD-CC57-43E3-963A-F702DD1BFD0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ASUE_OPER.My.MyApplication</StartupObject>
+    <RootNamespace>ASUE_OPER</RootNamespace>
+    <AssemblyName>ASUE_OPER</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ASUE_OPER.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>Full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ASUE_OPER.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>chat-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ASUE_OPER, Version=0.9.13.13, Culture=neutral, PublicKeyToken=null">
+      <ExecutableExtension>.exe</ExecutableExtension>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\..\..\..\ASUE_REPORT_ole - копия\ASUE_REPORT_ole\bin\Release\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OpcNetApi">
+      <HintPath>..\..\..\OPC_CLIENT_ASUE\ASUE_ARM_OPC\OpcNetApi.dll</HintPath>
+    </Reference>
+    <Reference Include="OpcNetApi.Com, Version=2.0.1.0, Culture=neutral, PublicKeyToken=78aea80f6827b5ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\OPC_CLIENT_ASUE\ASUE_ARM_OPC\OpcNetApi.Com.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Core" />
+    <Reference Include="ZedGraph">
+      <HintPath>..\..\..\..\ASUE_REPORT_ole - копия\ASUE_REPORT_ole\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Excel" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Opc" />
+    <Import Include="Opc.Da" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Data.OleDb" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLS\IniFile.vb" />
+    <Compile Include="CLS\label_vertical.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CLS\ProgBar_HorizontalTEXT.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CLS\ProgBar_VerticalTEXT.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FORMS\AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmibp.Designer.vb">
+      <DependentUpon>frmibp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmibp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmPLC.Designer.vb">
+      <DependentUpon>frmPLC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmPLC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmTMP.Designer.vb">
+      <DependentUpon>frmTMP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmTMP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmUSTAVKI.Designer.vb">
+      <DependentUpon>frmUSTAVKI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmUSTAVKI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmVodozabor.Designer.vb">
+      <DependentUpon>frmVodozabor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmVodozabor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmChpt.Designer.vb">
+      <DependentUpon>frmChpt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmChpt.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmOHCU.Designer.vb">
+      <DependentUpon>frmOHCU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmOHCU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmSAUKOS.Designer.vb">
+      <DependentUpon>frmSAUKOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmSAUKOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frm2BTP.Designer.vb">
+      <DependentUpon>frm2BTP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frm2BTP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmThemperature.Designer.vb">
+      <DependentUpon>frmThemperature.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmThemperature.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmASKUE.Designer.vb">
+      <DependentUpon>frmASKUE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmASKUE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmInterval.Designer.vb">
+      <DependentUpon>frmInterval.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmInterval.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmJournal.Designer.vb">
+      <DependentUpon>frmJournal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmJournal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_EB_DETAIL.Designer.vb">
+      <DependentUpon>frmKTP_EB_DETAIL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_EB_DETAIL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_EB.Designer.vb">
+      <DependentUpon>frmKTP_EB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_EB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_REB.Designer.vb">
+      <DependentUpon>frmKTP_REB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_REB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_REB_Detail.Designer.vb">
+      <DependentUpon>frmKTP_REB_Detail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_REB_Detail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmRP10S1.Designer.vb">
+      <DependentUpon>frmRP10S1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmRP10S1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmRP10S2.Designer.vb">
+      <DependentUpon>frmRP10S2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmRP10S2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmALARM.Designer.vb">
+      <DependentUpon>frmALARM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmALARM.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmTrends.Designer.vb">
+      <DependentUpon>frmTrends.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmTrends.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_AVO.Designer.vb">
+      <DependentUpon>frmKTP_AVO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmKTP_AVO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frm_CHGP.Designer.vb">
+      <DependentUpon>frm_CHGP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frm_CHGP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULES\ListViewComparer.vb" />
+    <Compile Include="FORMS\frmASTUER.Designer.vb">
+      <DependentUpon>frmASTUER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmASTUER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmASTUE_OPER.Designer.vb">
+      <DependentUpon>frmASTUE_OPER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmASTUE_OPER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmRP10.Designer.vb">
+      <DependentUpon>frmRP10.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmRP10.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmSAUT.Designer.vb">
+      <DependentUpon>frmSAUT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmSAUT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmIndexer.Designer.vb">
+      <DependentUpon>frmIndexer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmIndexer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmSauV.Designer.vb">
+      <DependentUpon>frmSauV.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmSauV.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmSetup.Designer.vb">
+      <DependentUpon>frmSetup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmSetup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmStatus.Designer.vb">
+      <DependentUpon>frmStatus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmStatus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODULES\MOD_SYSTEM.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FORMS\frmSplash.Designer.vb">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmSplash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Switch_electro.Designer.vb">
+      <DependentUpon>Switch_electro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Switch_electro.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CLS\ProgBar_VerticalTEXT.resx">
+      <DependentUpon>ProgBar_VerticalTEXT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmibp.resx">
+      <DependentUpon>frmibp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmPLC.resx">
+      <DependentUpon>frmPLC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmTMP.resx">
+      <DependentUpon>frmTMP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmUSTAVKI.resx">
+      <DependentUpon>frmUSTAVKI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmVodozabor.resx">
+      <DependentUpon>frmVodozabor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmChpt.resx">
+      <DependentUpon>frmChpt.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmOHCU.resx">
+      <DependentUpon>frmOHCU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmSAUKOS.resx">
+      <DependentUpon>frmSAUKOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frm2BTP.resx">
+      <DependentUpon>frm2BTP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmThemperature.resx">
+      <DependentUpon>frmThemperature.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmASKUE.resx">
+      <DependentUpon>frmASKUE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmASTUER.resx">
+      <DependentUpon>frmASTUER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmASTUE_OPER.resx">
+      <DependentUpon>frmASTUE_OPER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmInterval.resx">
+      <DependentUpon>frmInterval.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmJournal.resx">
+      <DependentUpon>frmJournal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmKTP_EB_DETAIL.resx">
+      <DependentUpon>frmKTP_EB_DETAIL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmKTP_EB.resx">
+      <DependentUpon>frmKTP_EB.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmKTP_REB.resx">
+      <DependentUpon>frmKTP_REB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmKTP_REB_Detail.resx">
+      <DependentUpon>frmKTP_REB_Detail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmRP10.resx">
+      <DependentUpon>frmRP10.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmRP10S1.resx">
+      <DependentUpon>frmRP10S1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmRP10S2.resx">
+      <DependentUpon>frmRP10S2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmSAUT.resx">
+      <DependentUpon>frmSAUT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmIndexer.resx">
+      <DependentUpon>frmIndexer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmSauV.resx">
+      <DependentUpon>frmSauV.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmSetup.resx">
+      <DependentUpon>frmSetup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmStatus.resx">
+      <DependentUpon>frmStatus.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmALARM.resx">
+      <DependentUpon>frmALARM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmTrends.resx">
+      <DependentUpon>frmTrends.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmKTP_AVO.resx">
+      <DependentUpon>frmKTP_AVO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frm_CHGP.resx">
+      <DependentUpon>frm_CHGP.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMS\frmSplash.resx">
+      <DependentUpon>frmSplash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Switch_electro.resx">
+      <DependentUpon>Switch_electro.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shneider\Nasos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shneider\kotel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shneider\plc.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shneider\kotel_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shneider\koteln.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shneider\Nasos_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shneider\vykl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chat-icon.ico" />
+    <None Include="Resources\VKL_NEW_8.png" />
+    <None Include="Resources\VKL_NEW_2.png" />
+    <None Include="Resources\VKL_NEW_1.png" />
+    <None Include="Resources\OnState5.png" />
+    <None Include="Resources\OffState.png" />
+    <None Include="Resources\F4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Установщик Windows 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
